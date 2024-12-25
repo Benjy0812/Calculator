@@ -7,16 +7,16 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Change to Windows runner
     
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.13'
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
@@ -28,14 +28,14 @@ jobs:
           pyinstaller --onefile your_script.py
 
       - name: Upload EXE as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: your-exe
           path: dist/main.exe
 
       - name: Upload EXE to GitHub Release
-        uses: softprops/action-gh-release@v4
+        uses: softprops/action-gh-release@v1  # Correct version 'v1'
         with:
           files: dist/main.exe
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Required for authentication
