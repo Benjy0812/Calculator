@@ -1,16 +1,14 @@
-name: Build Python EXE
+name: Build and Upload Python EXE
 
 on:
   push:
     branches:
-      - main
-    tags:
-      - 'v1.0.0'
+      - main  # Triggers on push to the main branch
 
 jobs:
   build:
-    runs-on: windows-latest
-    
+    runs-on: ubuntu-latest  # Use your preferred OS
+
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -27,17 +25,10 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile main.py  # Updated to use main.py
+          pyinstaller --onefile main.py
 
       - name: Upload EXE as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4  # Upload artifacts without requiring a tag
         with:
           name: main-exe
-          path: dist/main.exe
-
-      - name: Upload EXE to GitHub Release
-        uses: softprops/action-gh-release@v1
-        with:
-          files: dist/main.exe
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: dist/main.exe  # Path to your .exe file
