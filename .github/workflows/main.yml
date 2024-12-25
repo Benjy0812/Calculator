@@ -11,12 +11,12 @@ jobs:
     
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.13.1'
+          python-version: '3.x'
 
       - name: Install dependencies
         run: |
@@ -25,10 +25,17 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile main.py
+          pyinstaller --onefile your_script.py
 
       - name: Upload EXE as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: Calculator
-          path: dist/main.exe
+          name: your-exe
+          path: dist/your_script.exe
+
+      - name: Upload EXE to GitHub Release
+        uses: softprops/action-gh-release@v4
+        with:
+          files: dist/your_script.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
