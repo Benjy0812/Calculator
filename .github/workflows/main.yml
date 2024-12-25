@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use your preferred OS
+    runs-on: windows-latest  # Use your preferred OS
 
     steps:
       - name: Check out code
