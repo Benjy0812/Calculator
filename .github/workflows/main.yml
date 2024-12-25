@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Change to Windows runner
+    runs-on: windows-latest
     
     steps:
       - name: Check out code
@@ -25,7 +25,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --onefile your_script.py
+          pyinstaller --onefile main.py
 
       - name: Upload EXE as artifact
         uses: actions/upload-artifact@v3
