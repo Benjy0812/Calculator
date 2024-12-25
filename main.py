@@ -9,7 +9,7 @@ while True:
     num2 = input("Enter the second number: ")
     
 
-    operation = input("chose opertation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n")
+    operation = input("chose opertation:\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\nEnter operation: ")
     
     num_1 = float(num1)
     num_2 = float(num2)
