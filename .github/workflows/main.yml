@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - 'v*'  # Trigger the workflow when you push a tag like 'v1.0.0'
+      - 'v*'
 
 jobs:
   build:
