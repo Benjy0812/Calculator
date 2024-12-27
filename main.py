@@ -16,7 +16,6 @@ def caclulator():
         print()
 
         num1 = input("Enter the first number: ")
-        
         if num1.lower() == 'quit':
             clear()  
             break
