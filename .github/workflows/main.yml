@@ -3,11 +3,11 @@ name: Build and Upload Python EXE
 on:
   push:
     branches:
-      - main  # Triggers on push to the main branch
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use your preferred OS
+    runs-on: windows-latest
 
     steps:
       - name: Check out code
@@ -28,7 +28,7 @@ jobs:
           pyinstaller --onefile main.py
 
       - name: Upload EXE as artifact
-        uses: actions/upload-artifact@v4  # Upload artifacts without requiring a tag
+        uses: actions/upload-artifact@v4
         with:
           name: main-exe
-          path: dist/main.exe  # Path to your .exe file
+          path: dist/main.exe
