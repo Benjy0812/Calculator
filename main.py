@@ -2,13 +2,9 @@ import os
 
 
 def clear():
-<<<<<<< HEAD
-    if os.name == 'nt':
-        os.system('cls')  # Windows
-=======
+    
     if os.name == "nt":
         os.system("cls")  # Windows
->>>>>>> 650c9f10a00c0fbe03fad65f3b91295d026d4aa6
     else:
         os.system("clear")  # macOS/Linux
 
