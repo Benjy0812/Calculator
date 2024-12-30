@@ -4,9 +4,9 @@ import os
 def clear():
 
     if os.name == "nt":
-        os.system("cls")  # Windows
+        os.system("cls")
     else:
-        os.system("clear")  # macOS/Linux
+        os.system("clear")
 
 
 def calculator():
