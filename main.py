@@ -27,7 +27,7 @@ def calculator():
         print("4. Divide")
 
         operation = input("Enter operation (1-4): ").strip()
-        if operation not in ['1', '2', '3', '4']:
+        if operation not in ["1", "2", "3", "4"]:
             print("\nInvalid operation. Please choose a valid option (1-4).")
             input("Press Enter to try again...")
             continue
@@ -45,11 +45,14 @@ def calculator():
             else:
                 print("Error: Division by zero is not allowed.")
 
-        user_exit = input("\nDo you want to perform another calculation?"
-                          "(yes/no): ").strip().lower()
-        if user_exit == 'yes':
+        user_exit = (
+            input("\nDo you want to perform another calculation?" "(yes/no): ")
+            .strip()
+            .lower()
+        )
+        if user_exit == "yes":
             continue
-        elif user_exit == 'no':
+        elif user_exit == "no":
             clear_console()
             print("Exiting the calculator. Goodbye!")
             break
