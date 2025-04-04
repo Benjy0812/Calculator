@@ -65,5 +65,6 @@ def calculator():
             print("Invalid input. Please enter 'yes' or 'no'.")
             input("Press Enter to try again...")
 
+
 if __name__ == "__main__":
     calculator()
